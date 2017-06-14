@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E0n-Fm-nWh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Local Video Table View Controller-->
+        <scene sceneID="bE0-zm-NV9">
+            <objects>
+                <tableViewController id="E0n-Fm-nWh" customClass="LocalVideoTableViewController" customModule="LocalVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mYt-7t-C9H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoShotCell" rowHeight="150" id="Z2f-cW-7Zz" customClass="VideoShotTableViewCell" customModule="LocalVideo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z2f-cW-7Zz" id="HMC-aY-Lam">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ea2-pI-9e7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIm-3f-H0w">
+                                            <rect key="frame" x="157" y="44" width="60" height="60"/>
+                                            <state key="normal" image="playBtn"/>
+                                            <connections>
+                                                <action selector="playVideo:" destination="Z2f-cW-7Zz" eventType="touchUpInside" id="NVr-Yx-r5X"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I4-pV-Sxt">
+                                            <rect key="frame" x="166" y="114" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Ea2-pI-9e7" secondAttribute="bottom" id="Ekw-cf-TFg"/>
+                                        <constraint firstItem="xIm-3f-H0w" firstAttribute="centerY" secondItem="Ea2-pI-9e7" secondAttribute="centerY" id="EyG-de-NYm"/>
+                                        <constraint firstItem="Ea2-pI-9e7" firstAttribute="top" secondItem="HMC-aY-Lam" secondAttribute="top" id="MHO-KO-DIC"/>
+                                        <constraint firstItem="4I4-pV-Sxt" firstAttribute="top" secondItem="xIm-3f-H0w" secondAttribute="bottom" constant="10" id="YUG-c2-fgZ"/>
+                                        <constraint firstItem="4I4-pV-Sxt" firstAttribute="centerX" secondItem="xIm-3f-H0w" secondAttribute="centerX" id="hHf-Xe-zIF"/>
+                                        <constraint firstItem="Ea2-pI-9e7" firstAttribute="leading" secondItem="HMC-aY-Lam" secondAttribute="leading" id="w38-oB-pzp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ea2-pI-9e7" secondAttribute="trailing" id="xng-9v-Ad0"/>
+                                        <constraint firstItem="xIm-3f-H0w" firstAttribute="centerX" secondItem="Ea2-pI-9e7" secondAttribute="centerX" id="z8g-6x-0H2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playButton" destination="xIm-3f-H0w" id="wCz-ur-RKg"/>
+                                    <outlet property="shotImageView" destination="Ea2-pI-9e7" id="AtS-5s-se6"/>
+                                    <outlet property="videoTitleLabel" destination="4I4-pV-Sxt" id="fer-oA-oOh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E0n-Fm-nWh" id="9Wc-U0-hHr"/>
+                            <outlet property="delegate" destination="E0n-Fm-nWh" id="TqH-M2-eOw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sE4-sK-24J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="-253"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="playBtn" width="60" height="60"/>
+    </resources>
+</document>
